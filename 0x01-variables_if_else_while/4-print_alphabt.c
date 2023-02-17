@@ -1,5 +1,12 @@
 #include<stdio.h>
 
+/**
+ * main - Entry point
+ *
+ * Description: print all aplhabet letters except q and e
+ *
+ * Return: Always 0 (Success)
+*/
 int main(void)
 {
 	int i;
@@ -10,7 +17,7 @@ int main(void)
 		if (i == 'e' || i == 'q')
 			i++;
 		putchar(i);
-		i++;	
+	i++;
 	}
 	putchar('\n');
 	return (0);
