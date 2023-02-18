@@ -21,14 +21,14 @@ int main(void)
 		{
 			putchar(i + 48);
 			putchar(j + 48);
-			if (i == 8 && j == 9)
-				return (0);
-			putchar(',');
-			putchar(' ');
+			if (i + j != 17)
+			{
+				putchar(',');
+				putchar(' ');
+			}
 			j++;
 		}
 		i++;
 	}
-	putchar(' ');
 	return (0);
 }
