@@ -14,9 +14,11 @@ void counte_multiples(void)
 	result = 0;
 	while (i < 1024)
 	{
-		if (i % 3 == 0)
+		if (i % 5 == 0 && i % 3 == 0)
 			result += i;
-		if (i % 5 == 0)
+		else if (i % 3 == 0)
+			result += i;
+		else if (i % 5 == 0)
 			result += i;
 		i++;
 	}
