@@ -8,6 +8,7 @@
  *
  * Return: Alwas return void
  */
+
 void print_times_table(int n)
 {
 	int i, j, e, save;
@@ -25,7 +26,7 @@ void print_times_table(int n)
 			save = j / 10;
 			if (j <= 9)
 			{
-				write(1, "   ,", 4);
+				write(1, ",   ", 4);
 				_putchar(j + 48);
 			}
 			else if (j < 100 && j > 9)
