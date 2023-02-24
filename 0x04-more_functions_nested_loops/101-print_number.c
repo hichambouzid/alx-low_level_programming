@@ -21,6 +21,7 @@ void print_number(int n)
 		_putchar(6 + 48);
 		_putchar(4 + 48);
 		_putchar(8 + 48);
+		return;
 	}
 	if (n < 0)
 	{
