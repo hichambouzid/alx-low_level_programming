@@ -1,28 +1,46 @@
 #include<stdio.h>
-
-
-int ft_is_factor(long num)
+/**
+ * ft_factor_prime - print nothing
+ *
+ * @number: input
+ *
+ * Return: return is false
+ */
+int ft_factor_prime(long number)
 {
 	int i;
 	int res;
-	int j;
 
-	i = 2;
 	res = 0;
-	while (i <= num / 2 )
+	i = 3;
+	if (number % 2 == 0)
 	{
-		if (i % 2 != 0 && i % 3 != 0 && i % 5 != 0 && i % 7 != 0)
-		{
-			res = i;
-		}
-		i++;
+		number = number / 2;
+		ft_factor_prime(number);
 	}
-	return (res);
-
+	else
+	{
+		while (i < number / i)
+		{
+			if (number % i == 0)
+			{
+				res = number / i;
+				number = number / i;
+				ft_factor_prime(number);
+			}
+			i += 2;
+		}
+		return (res);
+	}
+	return (number);
 }
-int main()
+/**
+ * main - function execute the false code hhhh
+ *
+ * Return: always return .
+ */
+int main(void)
 {
-	printf("%d\n",ft_is_factor(1231952));
-
+	printf("%d\n", ft_factor_prime(1231952));
 	return (0);
 }
