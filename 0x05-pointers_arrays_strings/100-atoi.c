@@ -22,7 +22,7 @@ int _atoi(char *s)
 			sign *= -1;
 		i++;
 	}
-	if (s[i] == '\0')
+	if ((s[i] == '\0') || (s[i] == '\n'))
 		return (0);
 	while (s[i] >= '0' && s[i] <= '9')
 	{
