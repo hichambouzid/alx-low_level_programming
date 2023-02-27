@@ -24,10 +24,10 @@ int _atoi(char *s)
 	{
 		if (s[i] == '-')
 			sign *= -1;
+		if (s[i] == '\n')
+			return (0);
 		i++;
 	}
-	if (i == lenght)
-		return (0);
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		if (sign == 1)
