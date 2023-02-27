@@ -14,18 +14,22 @@ int _atoi(char *s)
 	res = 0;
 	i = 0;
 	sign = 1;
+	if (s[0] == '\0')
+		return (res);
 	while (s[i] < '0' || s[i] > '9')
 	{
 		if (s[i] == '-')
 			sign *= -1;
 		i++;
 	}
+	if (s[i] == '\0')
+		return (0);
 	while (s[i] >= '0' && s[i] <= '9')
 	{
 		if (sign == 1)
 		{
 			res = res * 10;
-			res = (res +  s[i]) - 48;
+			res += s[i] - 48;
 		}
 		else if (sign == -1)
 		{
