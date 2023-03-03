@@ -9,26 +9,20 @@ char *rot13(char *s)
 {
 	int i;
 	int j;
-	char chars[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
 
 	i = 0;
+	char chars[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
+	char chare[] = "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm";
+
 	while (s[i])
 	{
-		j = 0;
-		while (((chars[j] != '\0') && (s[i] >= 'a' && s[i] <= 'z'))
-				|| (s[i] >= 'A' && s[i] <= 'Z'))
+		for (j = 0; j < 52; j++)
 		{
-			if ((s[i] == chars[j]) && (j < 26))
+			if (s[i] == chars[j])
 			{
-				s[i] = chars[j + 26];
+				s[i] = chare[j];
 				break;
 			}
-			else if ((s[i] == chars[j]) && (j >= 26))
-			{
-				s[i] = chars[j - 26];
-				break;
-			}
-			j++;
 		}
 		i++;
 	}
