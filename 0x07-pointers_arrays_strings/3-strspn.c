@@ -27,5 +27,10 @@ unsigned int _strspn(char *s, char *accept)
 		}
 		i++;
 	}
-	return (res + 1);
+	j = 0;
+	while (s[j])
+		j++;
+	if (accept[i] == s[j])
+		res += 1;
+	return (res);
 }
