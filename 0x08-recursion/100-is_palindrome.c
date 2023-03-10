@@ -1,9 +1,9 @@
 /**
- * is_palindrome - check if the string palindrom
+ * strlen_recursion - function count the lenght
  *
- * @s: string
+ * @s: input
  *
- * Return: return 1 or 0
+ * Return: int
  */
 
 int strlen_recursion(char *s)
@@ -18,17 +18,37 @@ int strlen_recursion(char *s)
 	}
 	return (i);
 }
+/**
+ * check -  check if s palindrom
+ *
+ * @s: string
+ *
+ * @i: input
+ *
+ * @j: input
+ *
+ * Return: 1 or 0
+ */
+int check(char *s, int i, int j)
+{
+	if (s[i] == s[j])
+		if (i > j / 2)
+			return (1);
+		else
+			return (check(s, i + 1, j - 1));
+	else
+		return (0);
+}
+
+/**
+ * is_palindrome - check if the string palindrom
+ *
+ * @s: string
+ *
+ * Return: return 1 or 0
+ */
+
 int is_palindrome(char *s)
 {
-	int i;
-	int j;
-
-	j = 0;
-	i = strlen_recursion(s) - 1;
-	if (*s == s[i])
-	{
-
-	}
-
-
+	return (check(s, 0, strlen_recursion(s) - 1));
 }
