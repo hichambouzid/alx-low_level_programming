@@ -6,7 +6,7 @@
  *
  * @b: input
  *
- * Return : a or -1;
+ * Return: natural a or squar or -1
  */
 int check(int a, int b)
 {
@@ -16,6 +16,7 @@ int check(int a, int b)
 		return (-1);
 	return (check(a + 1, b));
 }
+
 /**
  * _sqrt_recursion - function
  *
