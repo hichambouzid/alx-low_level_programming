@@ -1,16 +1,29 @@
-
+#include "main.h"
+/**
+ * check - check if the number sqr
+ *
+ * @a : input
+ *
+ * @b: input
+ *
+ * Return : a or -1;
+ */
+int check(int a, int b)
+{
+	if (a * a == b)
+		return (a);
+	if (a * a > b)
+		return (-1);
+	return (check(a + 1, b));
+}
+/**
+ * _sqrt_recursion - function
+ *
+ * @n: number
+ *
+ * Return: number
+ */
 int _sqrt_recursion(int n)
 {
-	int i;
-
-	i = 2;
-	if (n < 0)
-		return (-1);
-	if (n == 4)
-		return (i);
-	else
-	{
-		i *= (n * _sqrt_recursion(n / 2));
-	}
-	return (-1);
+	return (check(1, n));
 }

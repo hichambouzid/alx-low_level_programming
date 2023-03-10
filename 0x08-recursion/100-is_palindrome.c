@@ -5,38 +5,30 @@
  *
  * Return: return 1 or 0
  */
+
+int strlen_recursion(char *s)
+{
+	int i;
+
+	i = 0;
+	if (*s != '\0')
+	{
+		i = 1;
+		i += strlen_recursion(s + 1);
+	}
+	return (i);
+}
 int is_palindrome(char *s)
 {
 	int i;
 	int j;
-	int res;
 
-	res = 0;
-	i = 0;
 	j = 0;
-	while (s[i])
-		i++;
-	if (i % 2 != 0)
+	i = strlen_recursion(s) - 1;
+	if (*s == s[i])
 	{
-		i--;
-		while (i > j && s[i] == s[j])
-		{
-			i--;
-			j++;
-			if (j == i - 2)
-				return (1);
-		}
+
 	}
-	if (i % 2 == 0 && i > 4)
-	{
-		i--;
-		while (i > j && s[i] == s[j])
-		{
-			i--;
-			j++;
-			if (j == i - 1)
-				return (1);
-		}
-	}
-	return (res);
+
+
 }
