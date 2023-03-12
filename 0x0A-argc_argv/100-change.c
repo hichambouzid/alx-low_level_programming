@@ -1,75 +1,43 @@
-#include<stdlib.h>
-#include<stdio.h>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
- * change - function for make change of amounte of money
+ * main - prints the minimum number of coins
+ *        to make change for an amount of money.
  *
- * @i: money
+ * @argc: holds the number of arguments passed
+ * @argv: array pointer that holds the arguments passed
  *
- * Return: change
- */
-int change(int i)
+ * Return: Always 0 (Success)
+*/
+
+int main(int argc, char *argv[])
 {
-	int e;
+	int cents, coins_number = 0;
 
-	e = 0;
-	while (i > 0)
+	if (argc != 2)
 	{
-		if (i % 25 == 0)
-		{
-			e += 1;
-			i -= 25;
-		}
-		else if (i % 10 == 0)
-		{
-			e += 1;
-			i -= 25;
-		}
-		else if (i % 5 == 0)
-		{
-			e += 1;
-			i -= 5;
-		}
-		else if (i % 2 == 0)
-		{
-			e += 1;
-			i -= 2;
-		}
-		else if (i % 1 == 0)
-		{
-			e += 1;
-			i -= 1;
-		}
-		i -= 0;
+		printf("Error\n");
+		return (1);
 	}
-	return (e);
-}
-/**
- * main - second prototyp of main
- *
- * @argc: size
- * @argv: array
- *
- * Return: 0 or 1
- */
-int main(int argc, char **argv)
-{
-	int i;
-	int j;
-
-	j = 0;
-	if (argc == 2)
+	else
 	{
-		i = atoi(argv[1]);
-		if (i < 0)
+		cents = atoi(argv[1]);
+		while (cents > 0)
 		{
-			printf("%d\n", j);
-			return (0);
+			if (cents >= 25)
+				cents -= 25;
+			else if (cents >= 10)
+				cents -= 10;
+			else if (cents >= 5)
+				cents -= 5;
+			else if (cents >= 2)
+				cents -= 2;
+			else if (cents >= 1)
+				cents -= 1;
+			coins_number += 1;
 		}
-		printf("%d\n", change(i));
-		return (0);
 	}
-	printf("Error\n");
-	return (1);
-
+	printf("%d\n", coins_number);
+	return (0);
 }
