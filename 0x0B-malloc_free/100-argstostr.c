@@ -15,16 +15,18 @@ char *argstostr(int ac, char **av)
 	char *ptr;
 	int e;
 
+	i = 0;
 	res = 0;
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	while (i < ac)
 	{
 		j = 0;
 		while (av[i][j])
 			j++;
 		res += j;
+		i++;
 	}
 
 	ptr = malloc(sizeof(int) * (res + ac + 1));
