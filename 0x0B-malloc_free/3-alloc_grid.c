@@ -1,47 +1,49 @@
-#include<stdlib.h>
+#include <stdlib.h>
+
 /**
- * alloc_grid - creat an array in heap
+ * alloc_grid - returns a pointer to a 2 dimensional array of integers.
+ * @width: width of the array.
+ * @height: height of the array.
  *
- * @width: input
- * @height: input
- *
- * Return: apointer to a pointer
+ * Return: pointer of an array of integers
  */
+
+
 int **alloc_grid(int width, int height)
 {
-	int i;
-	int j;
-	int **ptr;
+	int i, j;
+	int **arr;
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	ptr = (int **)malloc(sizeof(int) * (height));
-	if (ptr == NULL)
+
+	arr = malloc(height * sizeof(int *));
+
+	if (arr == NULL)
+	{
+		free(arr);
 		return (NULL);
+	}
 
 	for (i = 0; i < height; i++)
 	{
-		ptr[i] = (int *)malloc(sizeof(int) * (width));
+		arr[i] = malloc(width * sizeof(int));
 
-		if (ptr[i] == NULL)
+		if (arr[i] == NULL)
 		{
 			for (j = 0; j < i; j++)
-				free(ptr[j]);
+				free(arr[j]);
 
-			free(ptr);
+			free(arr);
 			return (NULL);
 		}
 
 	}
 
-
 	for (i = 0; i < height; i++)
-	{
 		for (j = 0; j < width; j++)
-			ptr[i][j] = 0;
-	}
+			arr[i][j] = 0;
 
-
-	return (ptr);
+	return (arr);
 }
