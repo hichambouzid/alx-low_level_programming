@@ -29,7 +29,7 @@ char *argstostr(int ac, char **av)
 		i++;
 	}
 
-	ptr = malloc(sizeof(char *) * (res + ac + 1));
+	ptr = malloc(sizeof(char) * (res + ac + 1));
 	ptr[0] = '\0';
 
 	for (i = 0; i < ac; i++)
