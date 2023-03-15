@@ -1,40 +1,42 @@
 #include<stdlib.h>
 /**
- * alloc_grid - creat an array in heap
+ * alloc_grid - function creat an table
  *
  * @width: input
  * @height: input
  *
- * Return: apointer to a pointer
+ * Return: pointer to pointer
  */
 int **alloc_grid(int width, int height)
 {
-	int i;
-	int j;
-	int **ptr;
+	int i, j, **ptt;
 
 	if ((width * height) <= 0)
 		return (NULL);
 
-	ptr = (int **)malloc(sizeof(int) * (height));
-	if (ptr == NULL)
+	ptt = malloc(sizeof(int) * (height));
+	if (ptt == NULL)
+	{
+		free(ptt);
 		return (NULL);
+	}
 
 	for (i = 0; i < height; i++)
 	{
-		ptr[i] = (int *)malloc(sizeof(int) * (width));
-		if (ptr[i] == NULL)
+		ptt[i] = malloc(sizeof(int) * (width));
+
+		if (ptt[i] == NULL)
 		{
 			for (; i >= 0; i--)
-				free(ptr[i]);
-			free(ptr);
+				free(ptt[i]);
+			free(ptt);
 			return (NULL);
 		}
 	}
+
 	for (i = 0; i < height; i++)
-	{
 		for (j = 0; j < width; j++)
-			ptr[i][j] = 0;
-	}
-	return (ptr);
+			ptt[i][j] = 0;
+
+	return (ptt);
 }
