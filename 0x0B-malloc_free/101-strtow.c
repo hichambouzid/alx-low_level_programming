@@ -16,14 +16,14 @@ char **strtow(char *str)
 	j = 0;
 	for (i = 0; str[i]; i++)
 	{
-		if (str[i] != ' ' && str[i] != '\0')
+		if (str[i] != ' ')
 		{
 			while (str[i] != ' ' && str[i] != '\0')
 				i++;
 			j += 1;
 		}
 	}
-	ptr = malloc(sizeof(char *) * (i));
+	ptr = malloc(sizeof(char *) * (j + 1));
 	if ((!ptr) || (str == NULL) || (*str == '\0'))
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
