@@ -1,11 +1,11 @@
 #include<stdlib.h>
 
 /**
- * strtow - function
+ * ft_check - function
  *
  * @str: string
  *
- * Return: double pointer
+ * Return: number
  */
 int ft_check(char *str)
 {
@@ -22,6 +22,13 @@ int ft_check(char *str)
 	}
 	return (j);
 }
+/**
+ * strtow - function
+ *
+ * @str: string
+ *
+ * Return: double pointer
+ */
 char **strtow(char *str)
 {
 	int i, j, e, a, res;
