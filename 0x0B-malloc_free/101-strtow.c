@@ -7,6 +7,21 @@
  *
  * Return: double pointer
  */
+int ft_check(char *str)
+{
+	int j;
+	int i;
+
+	i = 0;
+	j = 0;
+	while (str[i])
+	{
+		if (str[i] != '\0' && str[i] != ' ')
+			j = 1;
+		i++;
+	}
+	return (j);
+}
 char **strtow(char *str)
 {
 	int i, j, e, a, res;
@@ -23,6 +38,8 @@ char **strtow(char *str)
 			j += 1;
 		}
 	}
+	if (ft_check(str) == 0)
+		return (NULL);
 	ptr = malloc(sizeof(char *) * (j + 1));
 	if ((!ptr) || (str == NULL) || (*str == '\0'))
 		return (NULL);
