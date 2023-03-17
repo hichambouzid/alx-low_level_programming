@@ -13,12 +13,9 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 	void *i;
 
 	if (nmemb == 0 || size == 0)
-	{
-		i = NULL;
-		return (i);
-	}
+		return (NULL);
 	i = calloc(nmemb, sizeof(size));
-	if (i == NULL)
+	if (!i)
 		exit(98);
 	return (i);
 }
