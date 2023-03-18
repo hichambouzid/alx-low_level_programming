@@ -21,27 +21,7 @@ int check(char *str)
 	}
 	return (0);
 }
-int check_long(char *str)
-{
-	int i;
-	int j;
 
-	j = 0;
-	i = 0;
-	while (str[i])
-	{
-		if (str[i] >= '0' && str[i] <= '9')
-		{
-			j += 1;
-			if (j > 9)
-				return (1);
-		}
-		else
-			j = 0;
-		i++;
-	}
-	return (0);
-}
 /**
  * main - second prototype of function main
  *
@@ -53,9 +33,8 @@ int check_long(char *str)
  */
 int main(int argc, char **argv)
 {
-	int i;
+	long mul;
 
-	i = 0;
 	if (argc != 3)
 	{
 		printf("Error\n");
@@ -66,15 +45,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if ((check_long(argv[1]) == 1) || (check_long(argv[2]) == 1))
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	else
-	{
-		i = atoi(argv[1]) * atoi(argv[2]);
-		printf("%d\n", i);
-		return (0);
-	}
+	mul = atoi(argv[1]) * atoi(argv[2]);
+	printf("%lu\n", mul);
+	return (0);
 }
