@@ -1,6 +1,5 @@
 #include<stdlib.h>
 #include<stdio.h>
-#include<limits.h>
 /**
  * check - function
  *
@@ -40,7 +39,12 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if ((check(argv[1]) == 1) || (check(argv[2]) == 1))
+	if ((check(argv[1]) == 1))
+	{
+		printf("Error\n");
+		exit(98);
+	}
+	if (check(argv[2]) == 1)
 	{
 		printf("Error\n");
 		exit(98);
