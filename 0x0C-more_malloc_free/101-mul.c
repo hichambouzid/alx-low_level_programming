@@ -21,6 +21,27 @@ int check(char *str)
 	}
 	return (0);
 }
+int check_long(char *str)
+{
+	int i;
+	int j;
+
+	j = 0;
+	i = 0;
+	while (str[i])
+	{
+		if (str[i] >= '0' && str[i] <= '9')
+		{
+			j += 1;
+			if (j > 9)
+				return (1);
+		}
+		else
+			j = 0;
+		i++;
+	}
+	return (0);
+}
 /**
  * main - second prototype of function main
  *
@@ -45,8 +66,7 @@ int main(int argc, char **argv)
 		printf("Error\n");
 		exit(98);
 	}
-	if ((atoi(argv[1]) > INT_MAX) || (atoi(argv[2]) < INT_MIN) ||
-			(atoi(argv[1]) < INT_MIN) || (atoi(argv[2]) > INT_MAX))
+	if ((check_long(argv[1]) == 1) || (check_long(argv[2]) == 1))
 	{
 		printf("Error\n");
 		exit(98);
