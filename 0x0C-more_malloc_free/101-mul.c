@@ -33,7 +33,7 @@ int check(char *str)
  */
 int main(int argc, char **argv)
 {
-	long mul;
+	unsigned long mul;
 
 	if (argc != 3)
 	{
