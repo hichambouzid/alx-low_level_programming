@@ -20,7 +20,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		i++;
 	while (owner[j])
 		j++;
-	strang = malloc(sizeof(dog_t) - sizeof(age));
+	strang = malloc(sizeof(dog_t));
 	strang->name = malloc((sizeof(char) * (i + 1)));
 	strang->owner = malloc(sizeof(char) * (j + 1));
 	if (!(strang->name) || !(strang->owner))
