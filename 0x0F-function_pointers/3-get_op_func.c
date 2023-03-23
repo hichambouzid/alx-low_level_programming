@@ -1,12 +1,15 @@
 #include "3-calc.h"
-#include<stddef.h>
+#include <stddef.h>
+
 /**
- * get_op_func - pointet to function return a function return int
+ * get_op_func - get ops function pointer of type char array
+ *               that accepts two inputs of int data type
  *
- * @s: type of operator
+ * @s: a character pointer pointing to a symbol from the program argument
  *
- * Return: a function stored int array of typedef
- */
+ * Return: one of the operator functions to perform calculations
+*/
+
 int (*get_op_func(char *s))(int, int)
 {
 	/* struct opts of struct op_t */
@@ -22,9 +25,10 @@ int (*get_op_func(char *s))(int, int)
 
 	while (i < 5)
 	{
-		if (*ops[i].op == *s)
-			break;
+		if (*s == *ops[i].op)
+			return (ops[i].f);
 		i++;
 	}
-	return (ops[i].f);
+
+	return (NULL);
 }
