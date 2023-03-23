@@ -35,5 +35,5 @@ int main(int argc, char **argv)
 	i = f(atoi(argv[1]), atoi(argv[3]));
 
 	printf("%d\n", i);
-
+	return (0);
 }
