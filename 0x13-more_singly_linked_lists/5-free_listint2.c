@@ -11,9 +11,9 @@ void free_listint2(listint_t **head)
 	listint_t *ptr;
 	listint_t *vr;
 
-	vr = *head;
-	if (vr)
+	if (*head)
 	{
+		vr = *head;
 		while (vr->next)
 		{
 			ptr = vr;
