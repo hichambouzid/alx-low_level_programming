@@ -21,6 +21,6 @@ void free_listint2(listint_t **head)
 			vr = vr->next;
 		}
 		free(vr);
+		*head = NULL;
 	}
-	*head  = NULL;
 }
