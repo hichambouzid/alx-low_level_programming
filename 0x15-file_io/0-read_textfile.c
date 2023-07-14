@@ -17,7 +17,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		return (0);
 	i=0;
 	while (i<100)
+	{
 		buff[i]=0;
+		i++;
+	}
 	i=letters;
 	rd = -1;
 	count =0;
