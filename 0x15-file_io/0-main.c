@@ -1,12 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
-
+#include <stddef.h>
 /**
  * main - check the code
  *
  * Return: Always 0.
  */
+
+ssize_t read_textfile(const char *filename, size_t letters);
 int main(int ac, char **av)
 {
     ssize_t n;
