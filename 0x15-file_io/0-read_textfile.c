@@ -1,23 +1,27 @@
-
 #include<unistd.h>
- #include <fcntl.h>
+#include <fcntl.h>
 #include <sys/types.h>
 #include <stddef.h>
 #include "main.h"
+
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	int fd;
+	int 	fd;
 	ssize_t rd;
 	ssize_t count;
 	ssize_t i;
 	ssize_t ret_w;
-	char buff[2];
+	char 	buff[2];
 
 	if (!filename)
+	{
 		return (0);
+	}
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
+	{
 		return (0);
+	}
 	i = 0;
 	while (i < 2)
 	{
@@ -31,9 +35,13 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	{
 		rd = read(fd, buff, 1);
 		if (rd == 0)
+		{
 			break ;
+		}
 		if (rd != -1)
+		{
 			ret_w = write(STDOUT_FILENO, buff, rd);
+		}
 		if (rd ==-1 || ret_w != rd)
 		{
 			close(fd);
