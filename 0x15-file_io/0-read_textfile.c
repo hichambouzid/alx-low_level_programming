@@ -24,7 +24,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	i=letters;
 	rd = -1;
 	count =0;
-	while (i>0 && rd!=0 && (size_t)count<letters)
+	while (i>0 &&&& (size_t)count<letters)
 	{
 		rd = read(fd,buff,1);
 		if (rd==0)
@@ -40,6 +40,6 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		i -= rd;
 	}
 	close(fd);
-	return count;
+	return (count);
 }
 
