@@ -5,6 +5,10 @@
  * and print a specific number of
  * letters.
  *
+ * @filename: name of file
+ *
+ * @letters: size
+ *
  * Return: if succes return deff 0
  */
 
@@ -26,7 +30,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		free(str);
 		return (0);
 	}
-	str [i] = 0;
+	str[i] = 0;
 	if (write(1, str, i) < 0)
 	{
 		free(str);
@@ -34,3 +38,4 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	}
 	return (i);
 }
+
